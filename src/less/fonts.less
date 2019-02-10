@@ -1,0 +1,14 @@
+.font(@fontName; @urlName: @fontName; @weight: normal; @style: normal) {
+	font-family: @fontName;
+    src: url('../assets/fonts/@{urlName}.woff2') format('woff2'),
+		url('../assets/fonts/@{urlName}.woff') format('woff');
+	font-weight: @weight;
+	font-style: @style;
+}
+
+@font-face {
+	.font('Trebuchet MS', 'TrebuchetMS');
+}
+@font-face {
+	.font('Exo 2.0', 'Exo2.0-Thin', 100);
+}
