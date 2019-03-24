@@ -1,0 +1,9 @@
+<section class="container">
+    <popup v-if="isPopup" @close="closePopup" :settings="popupSettings"></popup>
+    <div class="blocks-wrapper">
+        <div class="block" v-for="block in blocksSettings">
+            <button class="settings-button" @click="showPopup(block.settings)">Настройки</button>
+            <p contenteditable>{{ block.bText }}</p>
+        </div>
+    </div>
+</section>

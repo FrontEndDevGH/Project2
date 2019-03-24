@@ -1,0 +1,30 @@
+<section class="popup">
+    <div class="popup-close" @click="$emit('close')"></div>
+    <div class="popup-header">
+        <span class="popup-title">Настройки</span>
+        <button class="popup-save-settings" @click="setData">Сохранить</button>
+    </div>
+    <div class="popup-settings">
+        <template v-for="setting in settings">
+            <template v-if="setting.fieldType === 'input'">
+                <div class="popup-fields">
+                    <div class="popup-field-title">{{ setting.Name }}</div>
+                    <input 
+                        class="popup-input js-field-value" 
+                        :name="setting.Name"
+                        type="text" 
+                        :value="setting.fieldValue" 
+                        :size="setting.fieldSize"
+                        @keyup="validate"
+                    >
+                </div>
+            </template>
+            <template v-if="setting.fieldType === 'select'">
+                <div class="popup-field-title">{{ setting.Name }}</div>
+                <select class="drop-down-list js-field-value" :name="setting.Name">
+                    <option v-for="option in setting.fieldValue">{{ option }}</option>
+                </select>
+            </template>
+        </template>
+    </div>
+</section>

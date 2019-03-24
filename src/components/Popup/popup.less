@@ -1,0 +1,73 @@
+.popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 300px;
+    min-height: 500px;
+    background: #cccbcb;
+    z-index: 1;
+    padding: 15px 50px 15px 20px;
+    color: #0606ba;
+    height: 100%;
+    
+    &-header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+    &-title {
+        padding-top: 7px;
+        font-weight: bold;
+    }
+    &-save-settings {
+        border: 1px solid #222;
+        padding: 8px 15px;
+        border-radius: 5px;
+        background: #fff;
+        cursor: pointer;
+    }
+    &-close {
+        position: absolute;
+        right: 20px;
+        top: 23px;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        &:before, &:after {
+            position: absolute;
+            left: 7px;
+            content: ' ';
+            height: 15px;
+            width: 2px;
+            background: #0606ba;
+        }
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+    &-settings {
+        margin-top: 60px;
+    }
+    &-fields {
+        margin-bottom: 20px;
+    }
+    &-input {
+        padding: 10px 5px;
+        color: #0606ba;
+        border: 1px solid #0606ba;
+    }
+    &-field-title {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .drop-down-list {
+        padding: 10px 5px;
+        border: 1px solid #0606ba;
+        color: #0606ba;
+        width: 100%;
+    }
+}
